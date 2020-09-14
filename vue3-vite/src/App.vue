@@ -1,19 +1,21 @@
 <template>
 <div>
-<div>  <input class="input-box" type="text" placeholder="输入"><button>提交</button></div>
-  <div class="btn-groups">
-    <div>+</div>
-    <div>-</div>
+  <div>
+    <div>
+      <router-link to='/'>home</router-link>
+    </div>
+  <div>
+    <router-link to='/weather'>weather</router-link>
   </div>
-  <div class="bg-img">
+
   </div>
+  <router-view></router-view>
 </div>
 </template>
 
 <script>
-
+import { reactive, ref ,computed,watch} from 'vue'
 export default {
-  name: 'App',
-
+  name: 'Home',
 }
 </script>
