@@ -1,0 +1,11 @@
+.btn-groups{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+  }
+  .bg-img{
+      background: url(../logo.png);
+      background-size: cover;
+      width: 200px;
+      height: 200px;
+  }
