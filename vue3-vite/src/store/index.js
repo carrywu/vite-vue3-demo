@@ -3,11 +3,9 @@ import Vuex from 'vuex'
 
 export  const store = Vuex.createStore({
     
-    state () {
-        return {
-          name: 'carry',
-          password:'123123'
-        }
+    state:{
+        name: 'carry',
+        password:'123123'
       },
       mutations:{
         setPassword (state,password){
