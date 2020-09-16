@@ -1,9 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 const routerHistory = createWebHistory()
-
-
-const router= createRouter({
+const routerHashHistory = createWebHashHistory()
+const router = createRouter({
     history: routerHistory,
     routes: [
         {
@@ -12,7 +10,11 @@ const router= createRouter({
         },
         {
             path: '/weather',
-            component: () => import('../views/weather.vue')
+            component: () => import('../views/Weather.vue')
+        },
+        {
+            path: '/logoin',
+            component: () => import('../views/Logoin.vue')
         }
     ],
 })

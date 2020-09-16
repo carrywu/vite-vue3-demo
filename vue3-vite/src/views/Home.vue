@@ -22,6 +22,7 @@
 
 <script>
 import { reactive, ref ,computed,watch} from 'vue'
+import { mapState } from "vuex"
 export default {
   name: 'Home',
   setup(){
