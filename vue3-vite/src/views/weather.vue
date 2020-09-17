@@ -28,6 +28,9 @@ export default {
     const cityname =reactive(null)
     const weatherObj = reactive({})
     const errText=reactive(null)
+   onMounted(()=>{
+     console.log('router.name',this)
+   })
     return{
         cityname,
         weatherObj,

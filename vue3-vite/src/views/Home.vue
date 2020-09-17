@@ -1,15 +1,19 @@
 <template>
 <div>
 <div class="inputbox">  
-  <input v-model="state.inputVal" class="input-box" type="text" placeholder="输入"><button @click="submitInput">提交</button>
+  <input v-model="state.inputVal" class="input-box" type="text" placeholder="输入"><button @click="submitInput()">提交</button>
+  <div>父组组件provide:{{refVal}}</div>
   <ul class="list">
-    <li v-for="(item,index) in state.list" :key="index" @click="delectItem(index)">
+    <listItem v-for="(item,index) in state.list" :item="item" :key="index" @click="delectItem(index)">
+    </listItem>
+    <!-- <li v-for="(item,index) in state.list" :key="index" @click="delectItem(index)">
       {{item}}
-    </li>
+    </li> -->
   </ul>
 </div>
 
 <div>refValue:{{refVal}}</div>
+<input type="text" v-model="refVal">
 <div>{{state.count}}*2={{state.double}}</div>
   <div class="btn-groups">
     <div @click="increment">+</div>
@@ -17,14 +21,20 @@
   </div>
   <div class="bg-img">
   </div>
+
+ 
 </div>
 </template>
 
 <script>
-import { reactive, ref ,computed,watch} from 'vue'
+import { reactive, ref ,computed,watch,provide} from 'vue'
 import { mapState } from "vuex"
+import listItem from '../components/listItem.vue'
 export default {
-  name: 'Home',
+  name: 'Home',  
+  components:{
+    listItem
+  } ,
   setup(){
    const state = reactive({
       count: 0,
@@ -33,14 +43,13 @@ export default {
       list:[]
     })
     let refVal=ref(0)
-    setTimeout(()=>{
-      refVal.value++
-    },1000)
+
     watch(()=>state.count,
     (count, prevCount) => {
         console.log('更改前:'+count,'更改后:'+prevCount)
     }
     )
+      provide("sonVal",refVal)
     function increment(){
       state.count++
     }
@@ -53,10 +62,12 @@ export default {
     function submitInput(){
         state.list.push(state.inputVal)
         state.inputVal=''
+
+      
     }
     function delectItem(index){
-        state.list.splice(index,1)
-      
+       state.list.splice(index,1)
+
     }
     return{
       state,
@@ -73,5 +84,6 @@ export default {
 .inputbox{
   border-bottom: 1px solid red;
 }
+
 
 </style>

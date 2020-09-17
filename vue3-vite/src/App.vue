@@ -11,9 +11,9 @@
         <router-link to="/logoin">logoin</router-link>
       </div>
     </div>
-
-        <router-view></router-view>
-   
+        <keep-alive>
+        <router-view/>
+        </keep-alive>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js add bulma
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js add weui
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
@@ -26,7 +26,6 @@ npm manifest:
     },
     "dependencies": {
       "axios": "^0.20.0",
-      "bulma": "^0.9.0",
       "vue": "^3.0.0-rc.1",
       "vue-router": "4.0.0-beta.9",
       "vuex": "^4.0.0-alpha.4"
@@ -35,11 +34,9 @@ npm manifest:
       "@vue/compiler-sfc": "^3.0.0-rc.1",
       "autoprefixer": "^9.8.6",
       "postcss": "^7.0.32",
-      "postcss-loader": "^4.0.1",
       "postcss-nested": "^4.2.3",
       "postcss-px-to-viewport": "^1.1.1",
       "sass": "^1.26.10",
-      "sass-loader": "^10.0.2",
       "vite": "^1.0.0-rc.1"
     }
   }
