@@ -1,8 +1,15 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-17 10:43:49
+ * @LastEditTime: 2020-09-17 11:16:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /vue3/vue3-vite/src/views/Home.vue
+-->
 <template>
 <div>
 <div class="inputbox">  
   <input v-model="state.inputVal" class="input-box" type="text" placeholder="输入"><button @click="submitInput()">提交</button>
-  <div>父组组件provide:{{refVal}}</div>
   <ul class="list">
     <listItem v-for="(item,index) in state.list" :item="item" :key="index" @click="delectItem(index)">
     </listItem>
